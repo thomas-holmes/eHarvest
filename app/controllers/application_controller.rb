@@ -6,4 +6,11 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     dashboard_path
   end
+
+  def require_admin!
+    respond_to do |format|
+      format.json { render json: { status: 403, error: 'Forbidden'}, status: :forbidden }
+      format.html { render :file => "public/403.html", status: :forbidden, layout: false }
+    end
+  end
 end
