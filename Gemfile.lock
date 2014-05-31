@@ -142,6 +142,7 @@ DEPENDENCIES
   jquery-rails
   pg
   rails (= 4.0.5)
+  rake
   rspec (= 3.0.0.rc1)
   rspec-rails (= 3.0.0.rc1)
   sass-rails (~> 4.0.2)
