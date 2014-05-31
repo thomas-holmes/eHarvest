@@ -7,6 +7,8 @@ EHarvest::Application.routes.draw do
 
   get 'agency', to: 'agencies#show'
 
+  get 'shop', to: 'searches#new'
+
   resources :items
   resources :item_codes
   resources :agency_codes

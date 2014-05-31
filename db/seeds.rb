@@ -19,7 +19,7 @@ locations = [
 ]
 
 agency = Agency.create!(name: 'Test Agency', locations: locations[0,1], agency_codes: agency_codes[0,2])
-User.create!(email: 'test@test.com', password: 'password', agency: agency)
+User.create!(email: 'borg@test.com', password: 'password', agency: agency)
 
 packaged = ItemCode.create!(code: '09', agency_codes: agency_codes[0,1])
 frozen = ItemCode.create!(code: '39', agency_codes: agency_codes[0,2])
