@@ -46,6 +46,7 @@ class OrderItemsController < ApplicationController
     ActiveRecord::Base.transaction do
       @order_item.update(order_item_params)
       item.quantity += quantity_adjustment
+      item.save
       raise ActiveRecord::Rollback unless item.valid?
     end
 

@@ -52,15 +52,17 @@ describe OrderItemsController do
     end
 
     context '#create' do
+      let(:item) { FactoryGirl.create(:item, quantity: 50) }
+
       it 'creates an order_item model' do
+        item = FactoryGirl.create(:item)
         expect {
-          post :create, order_id: order, order_item: FactoryGirl.attributes_for(:order_item, order: order)
+          post :create, order_id: order, order_item: FactoryGirl.attributes_for(:order_item, order: order, item_id: item.id)
         }.to change { order.reload.order_items.count }.by(1)
       end
 
       it 'copies item information when created' do
-        item = FactoryGirl.create(:item)
-        order_attributes = FactoryGirl.attributes_for(:order_item, order: order, item_id: item.id)
+        order_attributes = FactoryGirl.attributes_for(:order_item, quantity: 10, order: order, item_id: item.id)
         post :create, order_id: order, order_item: order_attributes
 
         order_item = order.reload.order_items.last
@@ -69,7 +71,6 @@ describe OrderItemsController do
       end
 
       it 'decrements stock from item' do
-        item = FactoryGirl.create(:item, quantity: 50)
         order_attributes = FactoryGirl.attributes_for(:order_item, order: order, quantity: 10, item_id: item.id)
         post :create, order_id: order, order_item: order_attributes
         item.reload
@@ -78,8 +79,9 @@ describe OrderItemsController do
     end
 
     context '#update' do
+      let(:item) { FactoryGirl.create(:item, quantity: 20) }
       it 'can update an order_item' do
-        order_item = FactoryGirl.create(:order_item, order: order)
+        order_item = FactoryGirl.create(:order_item, order: order, item: item)
 
         new_qty = order_item.quantity + 10
         put :update, order_id: order, id: order_item.id, order_item: { quantity: new_qty }
@@ -89,7 +91,6 @@ describe OrderItemsController do
       end
 
       it 'updates item quantity when quantity is updated' do
-        item = FactoryGirl.create(:item, quantity: 20)
         order_item = FactoryGirl.create(:order_item, order: order, item: item, quantity: 5)
 
         put :update, order_id: order, id: order_item.id, order_item: { quantity: 2 }
@@ -108,8 +109,9 @@ describe OrderItemsController do
     end
 
     context '#destroy' do
+      let(:item) { FactoryGirl.create(:item, quantity: 10) }
       it 'can destroy an order_item' do
-        order_item = FactoryGirl.create(:order_item, order: order)
+        order_item = FactoryGirl.create(:order_item, order: order, item: item)
 
         delete :destroy, order_id: order, id: order_item, format: :json
 
@@ -117,7 +119,6 @@ describe OrderItemsController do
       end
 
       it 'restores quantity to item when destroyed' do
-        item = FactoryGirl.create(:item, quantity: 10)
         order_item = FactoryGirl.create(:order_item, order: order, item: item, quantity: 5)
         delete :destroy, order_id: order, id: order_item, format: :json
 
