@@ -1,1 +1,16 @@
-<h1>Recent Orders</h1>
+<div class="container">
+	<div class="row">
+		<h1 class="text-center">Recent Orders</h1>
+		<div class="list-group">
+			<%= render "orders/add_order" %>
+			<% if @orders.any? %>
+				<% @orders.each do |order| %>
+					<%= render order %>
+				<% end %>
+			<% else %>
+				No orders to display
+			<% end %>
+		</div>
+	</div>
+</div>
+
