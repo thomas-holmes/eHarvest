@@ -46,6 +46,8 @@ group :test do
   gem 'rake'
 end
 
+gem 'habtm_generator', :group => :development
+
 group :development, :test do
   gem 'pry-byebug'
 end
