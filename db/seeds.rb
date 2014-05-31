@@ -42,3 +42,12 @@ orders = [
 	Order.create!(requester: "Sam", recipient: "Caroline", agency: agency, location: agency.locations.first, delivery_date: Time.now + 3.days),
 	Order.create!(requester: "Sam", recipient: "Sam", agency: agency, location: agency.locations.last, delivery_date: Time.new + 5.days),
 ]
+
+order1 = Order.find(1)
+order1.order_items.create!(item: Item.find(1), quantity: 5, weight: 20, fee: 0.25)
+order1.order_items.create!(item: Item.find(2), quantity: 39, weight: 5, fee: 1.00)
+
+
+order2 = Order.find(2)
+order2.order_items.create!(item: Item.find(1), quantity: 73, weight: 20, fee: 0.25)
+order2.order_items.create!(item: Item.find(3), quantity: 12, weight: 50, fee: 10.00)

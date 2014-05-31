@@ -1,0 +1,40 @@
+<div class="list-group-item">
+	<div class="row">
+		<div class="col-md-2">
+			<h4>Status</h4>
+			<p>Completed</p>
+		</div>
+		<div class="col-md-4">
+			<h4>Order #<%= @order.id %></h3>
+			<p><strong>Requested by:</strong> <%= @order.requester %></p>
+			<p><strong>Scheduled for:</strong> <%= @order.delivery_date %></p> 
+			<p><strong>Location:</strong> <%= @order.location.name %></p>
+			<p><strong>Recipient:</strong> <%= @order.recipient %></p>
+		</div>
+	</div>
+</div>
+<br>
+<div>
+  <% @order.order_items.each do |i| %>
+    <div class="list-group-item">
+      <div class="row">
+        <div class="col-md-4">
+          <p><strong>Item:</strong> <%= i.item.name %></p>
+        </div>
+        <div class="col-md-2">
+          <p><strong>Weight:</strong> <%= i.weight %></p>
+        </div>
+        <div class="col-md-2">
+          <p><strong>Fee:</strong> $<%= number_with_precision(i.fee, precision: 2) %></p>
+        </div>
+        <div class="col-md-2">
+          <p><strong>quantity:</strong> <%= i.quantity %></p>
+        </div>
+        <div class="col-md-2">
+          <p><strong>total:</strong> $<%= number_with_precision(i.quantity * i.weight * i.fee, precision: 2) %></p>
+        </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
