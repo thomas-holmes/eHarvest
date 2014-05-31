@@ -7,8 +7,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<% if params[:controller] == "home" %>
+		<div class="lander">
+	<% else %>
+		<%= render 'layouts/header' %>
+	<% end %>
 
-<%= yield %>
+	<div class="container">
+		<% flash.each do |key, value| %>
+			<div class="alert alert-<%= key %>"<%= value %></div>
+		<% end %>
+
+		<%= yield %>
+	</div>
+
+	<% if params[:controller] == "home" %>
+		</div>
+	<% end %>
+
 
 </body>
 </html>
