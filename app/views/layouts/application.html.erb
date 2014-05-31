@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<% if params[:controller] == "home" %>
+	<% if params[:controller] == "home"  || params[:controller] == "devise/sessions" %>
 		<div class="lander">
 	<% else %>
 		<%= render 'layouts/header' %>
