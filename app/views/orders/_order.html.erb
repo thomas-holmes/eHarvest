@@ -4,7 +4,7 @@
 			<h4>Status</h4>
 			<p>Completed</p>
 			<br>
-			<%= button_to "View Details", order_path(order), class: "btn btn-primary btn-md" %>
+			<%= button_to "View Details", order_path(order), class: "btn btn-primary btn-md btn-block" %>
 		</div>
 		<div class="col-md-4">
 			<h4>Order #<%= order.id %></h3>
@@ -12,8 +12,6 @@
 			<p><strong>Scheduled for:</strong> <%= order.delivery_date %></p> 
 			<p><strong>Location:</strong> <%= order.location.name %></p>
 			<p><strong>Recipient:</strong> <%= order.recipient %></p>
-		</div>
-		<div class="col-md-3">
 		</div>
 	</div>
 </div>
