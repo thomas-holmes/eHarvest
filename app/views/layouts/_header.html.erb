@@ -6,7 +6,7 @@
                 <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span
                     class="icon-bar"></span><span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">eHarvest</a>
+            <a class="navbar-brand" href= <%= root_path %>>eHarvest</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -16,10 +16,11 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#"><span class="glyphicon glyphicon-user"></span>My Account</a></li>
-                <li><a href="#">Log out</a></li>
+                <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
     </nav>
+    <% #link_to image_tag("atlanta-food-bank.png", :border=>0), root_path %>
 </div>
 
