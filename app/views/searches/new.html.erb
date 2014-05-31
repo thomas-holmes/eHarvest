@@ -1,0 +1,14 @@
+<h1>Item Search</h1>
+
+<%= form_for @search do |f| %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :names %>
+  </div>
+  <div class="field">
+    <%= f.label :category_id %><br />
+    <%= f.collection_select :category_id, Item.order(:name), :id, :name, include_blank: true %>
+  </div>
+  
+  <div class="actions"><%= f.submit "Search" %></div>
+<% end %>
