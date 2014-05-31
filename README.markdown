@@ -1,4 +1,4 @@
-eHarvest
+eHarvest [![Build Status](https://travis-ci.org/thomas-holmes/eHarvest.svg?branch=master)](https://travis-ci.org/thomas-holmes/eHarvest) [![Code Climate](https://codeclimate.com/github/thomas-holmes/eHarvest.png)](https://codeclimate.com/github/thomas-holmes/eHarvest)
 =======
 
 # Setup
@@ -6,11 +6,6 @@ eHarvest
 Copy config/database.example.yml to config/database.yml and configure with values for your system
 
 album of [http://imgur.com/75NlcRS,jgESCKe,JFGtsmb,rgxYGMP#0](images)
-
-![Full board](http://imgur.com/75NlcRS.jpg)
-![Drawings](http://imgur.com/jgESCKe.jpg)
-![Models #1](http://imgur.com/JFGtsmb.jpg)
-![Models #2](http://imgur.com/rgxYGMP.jpg)
 
 # Relations
 
