@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140531045853) do
+ActiveRecord::Schema.define(version: 20140531050447) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,14 @@ ActiveRecord::Schema.define(version: 20140531045853) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "agencies_locations", id: false, force: true do |t|
+    t.integer "agency_id",   null: false
+    t.integer "location_id", null: false
+  end
+
+  add_index "agencies_locations", ["agency_id", "location_id"], name: "index_agencies_locations_on_agency_id_and_location_id", unique: true, using: :btree
+  add_index "agencies_locations", ["location_id", "agency_id"], name: "index_agencies_locations_on_location_id_and_agency_id", unique: true, using: :btree
 
   create_table "agency_codes", force: true do |t|
     t.string   "code"
