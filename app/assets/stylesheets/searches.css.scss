@@ -1,3 +1,23 @@
 // Place all the styles related to the searches controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.row {
+  column-gap:40px;
+}
+
+.col-md-4 {
+  background-color: #87E5FF;
+  padding: 10px;  
+  border-radius:10px;
+}
+
+.col-md-8 {
+  background-color: #86E0B6;
+  padding: 10px;
+  border-radius:10px;
+  
+}
+
+
+
