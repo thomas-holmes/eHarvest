@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Kaushan+Script);
 
 h1 {
 	color: #777;
@@ -16,7 +17,9 @@ h1 {
 	height: 1000px;
 	color: #fff;
 	h1 {
+    font-family: 'Kaushan Script', cursive;
 		color: #fff;
+    font-size: 128px;
 	}
 	a {
 		color: #fff;
