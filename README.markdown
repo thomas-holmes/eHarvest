@@ -1,4 +1,4 @@
-eHarvest
+eHarvest [![Build Status](https://travis-ci.org/thomas-holmes/eHarvest.svg?branch=master)](https://travis-ci.org/thomas-holmes/eHarvest) [![Code Climate](https://codeclimate.com/github/thomas-holmes/eHarvest.png)](https://codeclimate.com/github/thomas-holmes/eHarvest)
 =======
 
 # Setup
