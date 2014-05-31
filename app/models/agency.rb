@@ -1,6 +1,6 @@
 class Agency < ActiveRecord::Base
   has_many :users
   has_many :orders
-  has_and_belongs_to_many :locations, unique: true
-  has_and_belongs_to_many :agency_codes, unique: true
+  has_and_belongs_to_many :locations, -> { uniq }
+  has_and_belongs_to_many :agency_codes, -> { uniq }
 end
