@@ -31,3 +31,8 @@ items = [
   Item.create!(name: 'Chicken Breast', weight: 50, quantity: 25, fee: 10.00, item_code: frozen),
   Item.create!(name: 'Carrots', weight: 5, quantity: 87, fee: 3.00, item_code: fresh),
 ]
+
+orders = [
+	Order.create!(requester: "Sam", recipient: "Caroline", agency: agency, location: agency.locations.first, delivery_date: Time.now + 3.days),
+	Order.create!(requester: "Sam", recipient: "Sam", agency: agency, location: agency.locations.last, delivery_date: Time.new + 5.days),
+]

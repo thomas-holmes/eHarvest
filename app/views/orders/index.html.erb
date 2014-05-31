@@ -1,14 +1,15 @@
-<h1>Recent Orders</h1>
-<div class="sidebar col-md-4">
-	<% if @orders.any? %>
-		<%= @orders.each do |order| %>
-			<%= link_to "Order scheduled for #{order.delivery_date} at #{order.location.name}", order %>
+<div class="container">
+	<div class="row">
+		<h1 class="text-center">Recent Orders</h1>
+		<% if @orders.any? %>
+			<div class="list-group">
+				<%= @orders.each do |order| %>
+					<%= render order %>
+				<% end %>
+			</div>
+		<% else %>
+			No orders to display
 		<% end %>
-	<% else %>
-		No orders to diplay
-	<% end %>
+	</div>
 </div>
 
-<div class="preview col-md-8">
-	This is a preview
-<div>
