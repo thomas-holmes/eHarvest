@@ -14,6 +14,13 @@ h1 {
 	background-repeat: no-repeat;
 	background-size: 100%;
 	height: 1000px;
+	color: #fff;
+	h1 {
+		color: #fff;
+	}
+	a {
+		color: #fff;
+	}
 }
 
 a.list-group-item {
@@ -34,4 +41,8 @@ a.list-group-item {
 
 .status {
 	text-align:center;
+}
+
+.lander input {
+  color: #333;
 }

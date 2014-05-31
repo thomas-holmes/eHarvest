@@ -1,29 +1,28 @@
-<h1> Agency Reports </h1>
+<h1 class="text-center">Agency Reports</h1>
 
-<table>
-  <tr>
-    <th>Incomplete Reports</th>
-    <th>Link to Report Form</th>
-  </tr>
+<table class="table table-striped table-condensed">
+	<thead>
+  	<tr>
+			<th><h4>My Reports</h4></th>
+			<th><h4>Link to Report Form</h4></th>
+			<th><h4>Status</h4></th>
+  	</tr>
+	</thead>
+	<body>
  
-  <% @incomplete_reports.each do |agency_report| %>
-    <tr>  
-      <td><%= agency_report.report.name %></td>
-      <td><%= agency_report.report.link  %></td>
-    </tr>
-  <% end %>
-</table>
-
-<table>
-  <tr>
-    <th>Complete Reports</th>
-    <th>Link to Report Form</th>
-  </tr>
- 
-  <% @complete_reports.each do |agency_report| %>
-    <tr>  
-      <td><%= agency_report.report.name  %></td>
-      <td><%= agency_report.report.link  %></td>
-    </tr>
-  <% end %>
-</table>
+  	<% @incomplete_reports.each do |agency_report| %>
+    	<tr>  
+      	<td><%= agency_report.report.name %></td>
+      	<td><%= agency_report.report.link  %></td>
+				<td><span class="label label-error">Incomplete</span></td>
+    	</tr>
+  	<% end %>
+  	<% @complete_reports.each do |agency_report| %>
+    	<tr>  
+      	<td><%= agency_report.report.name  %></td>
+      	<td><%= agency_report.report.link  %></td>
+				<td><span class="label label-success">Complete</span></td>
+    	</tr>
+  	<% end %>
+	</table>
+	</body>

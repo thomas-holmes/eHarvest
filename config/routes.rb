@@ -1,7 +1,7 @@
 EHarvest::Application.routes.draw do
   devise_for :users
 
-  root 'orders#index'
+	root 'home#index'
 
   get '/agency_reports', controller: 'agency_reports', action: 'index'
 
