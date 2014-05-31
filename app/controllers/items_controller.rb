@@ -4,12 +4,12 @@ class ItemsController < ApplicationController
   before_action :require_admin!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @items = Item.all
+    @items = Item.for_agency(current_user.agency.id)
     respond_with(@items)
   end
 
   def show
-    @item = Item.find(params[:id])
+    @item = Item.for_agency(current_user.agency.id).find(params[:id])
     respond_with(@item)
   end
 

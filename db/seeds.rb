@@ -7,9 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 #
 agency_codes = [
-  AgencyCode.create!(code: 'RJ33', description: 'Agency Type 1'),
-  AgencyCode.create!(code: 'N13', description: 'Agency Type 1'),
-  AgencyCode.create!(code: 'RJ33', description: 'Agency Type 1'),
+  AgencyCode.create!(code: 'RJ9', description: 'Agency Type 1'),
+  AgencyCode.create!(code: 'N13', description: 'Agency Type 2'),
+  AgencyCode.create!(code: 'J23', description: 'Agency Type 3'),
 ]
 
 locations = [
@@ -20,6 +20,12 @@ locations = [
 
 agency = Agency.create!(name: 'Test Agency', locations: locations[0,1], agency_codes: agency_codes[0,2])
 User.create!(email: 'test@test.com', password: 'password', agency: agency)
+
+agency2 = Agency.create!(name: 'Test Agency 2', locations: locations[0,1], agency_codes: agency_codes[1,2])
+User.create!(email: 'test2@test.com', password: 'password', agency: agency2)
+
+agency3 = Agency.create!(name: 'Test Agency 3', locations: locations[0,1], agency_codes: agency_codes[2,1])
+User.create!(email: 'test3@test.com', password: 'password', agency: agency3)
 
 packaged = ItemCode.create!(code: '09', agency_codes: agency_codes[0,1])
 frozen = ItemCode.create!(code: '39', agency_codes: agency_codes[0,2])
