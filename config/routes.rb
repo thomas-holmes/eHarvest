@@ -3,4 +3,6 @@ EHarvest::Application.routes.draw do
   root 'home#index'
 
   get '/dashboard', controller: 'dashboard', action: 'index'
+
+  get 'agency', to: 'agencies#show'
 end
