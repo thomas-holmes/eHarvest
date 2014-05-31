@@ -46,6 +46,10 @@ group :test do
   gem 'rake'
 end
 
+group :development, :test do
+  gem 'pry-byebug'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
