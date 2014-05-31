@@ -7,11 +7,7 @@ rvm:
   - 2.1.0
 before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
-
-test:
-  adapter: postgresql
-  database: travis_ci_test
-  username: postgres
+  - cp config/database.travis.yml config/database.yml
 
 notifications:
   webhooks:
