@@ -6,9 +6,6 @@ gem 'rails', '4.0.5'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
-gem 'rspec', '3.0.0.rc1'
-gem 'rspec-rails', '3.0.0.rc1'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
@@ -33,6 +30,14 @@ gem 'jquery-rails'
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
+end
+
+group :test do
+  gem 'rspec', '3.0.0.rc1'
+  gem 'rspec-rails', '3.0.0.rc1'
+
+  gem 'factory_girl_rails', '~> 4.4.1'
+  gem 'faker', '~> 1.3.0'
 end
 
 # Use ActiveModel has_secure_password
