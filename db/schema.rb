@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140531052902) do
+ActiveRecord::Schema.define(version: 20140531122739) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,14 @@ ActiveRecord::Schema.define(version: 20140531052902) do
 
   add_index "agency_codes_item_codes", ["agency_code_id", "item_code_id"], name: "agency_code_to_item_code_index", unique: true, using: :btree
   add_index "agency_codes_item_codes", ["item_code_id", "agency_code_id"], name: "item_code_to_agency_code_index", unique: true, using: :btree
+
+  create_table "agency_reports", force: true do |t|
+    t.integer  "report_id"
+    t.integer  "agency_id"
+    t.boolean  "completed"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "item_codes", force: true do |t|
     t.string   "code"
@@ -102,6 +110,13 @@ ActiveRecord::Schema.define(version: 20140531052902) do
 
   add_index "orders", ["agency_id"], name: "index_orders_on_agency_id", using: :btree
   add_index "orders", ["location_id"], name: "index_orders_on_location_id", using: :btree
+
+  create_table "reports", force: true do |t|
+    t.string   "name"
+    t.string   "link"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.datetime "created_at"
