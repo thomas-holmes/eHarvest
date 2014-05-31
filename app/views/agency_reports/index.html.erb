@@ -1,0 +1,29 @@
+<h1> Agency Reports </h1>
+
+<table>
+  <tr>
+    <th>Incomplete Reports</th>
+    <th>Link to Report Form</th>
+  </tr>
+ 
+  <% @incomplete_reports.each do |agency_report| %>
+    <tr>  
+      <td><%= agency_report.report.name %></td>
+      <td><%= agency_report.report.link  %></td>
+    </tr>
+  <% end %>
+</table>
+
+<table>
+  <tr>
+    <th>Complete Reports</th>
+    <th>Link to Report Form</th>
+  </tr>
+ 
+  <% @complete_reports.each do |agency_report| %>
+    <tr>  
+      <td><%= agency_report.report.name  %></td>
+      <td><%= agency_report.report.link  %></td>
+    </tr>
+  <% end %>
+</table>

@@ -3,6 +3,8 @@ EHarvest::Application.routes.draw do
 
   root 'orders#index'
 
+  get '/agency_reports', controller: 'agency_reports', action: 'index'
+
   get 'agency', to: 'agencies#show'
 
   resources :items
@@ -14,4 +16,5 @@ EHarvest::Application.routes.draw do
     resources :order_items do
     end
   end
+
 end
