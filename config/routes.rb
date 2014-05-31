@@ -12,5 +12,8 @@ EHarvest::Application.routes.draw do
   resources :agency_codes
   resources :locations
 
-  resources :orders
+  resources :orders do
+    resources :order_items do
+    end
+  end
 end
