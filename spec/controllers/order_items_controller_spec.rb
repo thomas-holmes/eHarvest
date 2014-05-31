@@ -52,12 +52,11 @@ describe OrderItemsController do
     end
 
     context '#create' do
-      let(:item) { FactoryGirl.create(:item, quantity: 50) }
+      let!(:item) { FactoryGirl.create(:item, quantity: 50) }
 
       it 'creates an order_item model' do
-        item = FactoryGirl.create(:item)
         expect {
-          post :create, order_id: order, order_item: FactoryGirl.attributes_for(:order_item, order: order, item_id: item.id)
+          post :create, order_id: order, order_item: FactoryGirl.attributes_for(:order_item, order: order, item_id: item.id, quantity: 30)
         }.to change { order.reload.order_items.count }.by(1)
       end
 
