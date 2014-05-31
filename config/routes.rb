@@ -1,9 +1,7 @@
 EHarvest::Application.routes.draw do
   devise_for :users
 
-  root 'home#index'
-
-  get '/dashboard', controller: 'dashboard', action: 'index'
+  root 'orders#index'
 
   get 'agency', to: 'agencies#show'
 
