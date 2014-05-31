@@ -1,1 +1,14 @@
 <h1>Recent Orders</h1>
+<div class="sidebar col-md-4">
+	<% if @orders.any? %>
+		<%= @orders.each do |order| %>
+			<%= link_to "Order scheduled for #{order.delivery_date} at #{order.location.name}", order %>
+		<% end %>
+	<% else %>
+		No orders to diplay
+	<% end %>
+</div>
+
+<div class="preview col-md-8">
+	This is a preview
+<div>
