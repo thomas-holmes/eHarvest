@@ -23,7 +23,7 @@
 
         <p>
           <%= f.label :pick_up_location %><br />
-          <%= f.text_field :location_id %>
+          <%= f.collection_select(:location_id, Location.all, :id, :name) %>
         </p>
       </ul>
 
