@@ -40,13 +40,13 @@ group :test do
   gem 'rspec-rails', '3.0.0.rc1'
 
   gem 'factory_girl_rails', '~> 4.4.1'
-  gem 'faker', '~> 1.3.0'
 
   gem 'rake'
 end
 
 group :development, :test do
   gem 'pry-byebug'
+  gem 'faker', '~> 1.3.0'
 end
 
 # Use ActiveModel has_secure_password
