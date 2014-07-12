@@ -13,14 +13,14 @@
   	<% @incomplete_reports.each do |agency_report| %>
     	<tr>  
       	<td><%= agency_report.report.name %></td>
-      	<td><%= agency_report.report.link  %></td>
-				<td><span class="label label-error">Incomplete</span></td>
+      	<td><%= link_to "#{agency_report.report.link}", "#"  %></td>
+				<td><span class="label label-danger">Incomplete</span></td>
     	</tr>
   	<% end %>
   	<% @complete_reports.each do |agency_report| %>
     	<tr>  
       	<td><%= agency_report.report.name  %></td>
-      	<td><%= agency_report.report.link  %></td>
+        <td><%= link_to "#{agency_report.report.link}", "#"  %></td>
 				<td><span class="label label-success">Complete</span></td>
     	</tr>
   	<% end %>
