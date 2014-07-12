@@ -19,7 +19,7 @@ locations = [
 ]
 
 agency = Agency.create!(name: 'Test Agency', locations: locations[0,1], agency_codes: agency_codes[0,2])
-User.create!(email: 'borg@test.com', password: 'password', agency: agency)
+User.create!(email: 'test@test.com', password: 'password', agency: agency)
 
 agency2 = Agency.create!(name: 'Test Agency 2', locations: locations[0,1], agency_codes: agency_codes[1,2])
 User.create!(email: 'test2@test.com', password: 'password', agency: agency2)
