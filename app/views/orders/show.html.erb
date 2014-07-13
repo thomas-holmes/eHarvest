@@ -8,7 +8,7 @@
 		<div class="col-md-4">
 			<h4>Order #<%= @order.id %></h3>
 			<p><strong>Requested by:</strong> <%= @order.requester %></p>
-			<p><strong>Scheduled for:</strong> <%= @order.delivery_date %></p> 
+			<p><strong>Scheduled for:</strong> <%= @order.delivery_date.to_formatted_s(:long_date_local_time)  %></p> 
 			<p><strong>Location:</strong> <%= @order.location.name %></p>
 			<p><strong>Recipient:</strong> <%= @order.recipient %></p>
 		</div>
