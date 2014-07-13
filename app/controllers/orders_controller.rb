@@ -24,6 +24,7 @@ class OrdersController < ApplicationController
 
   def create
     @order = current_user.agency.orders.create(order_params)
+    binding.pry
     respond_with(@order)
   end
 
@@ -42,6 +43,6 @@ class OrdersController < ApplicationController
   end
 
   def order_params
-    params.require(:order).permit(:requester, :recipient)
+    params.require(:order).permit(:requester, :recipient, :location_id, :delivery_date)
   end
 end
