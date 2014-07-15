@@ -1,5 +1,11 @@
+<div class="row">
+  <div class="col-md-4">
+    <%= render partial: "searches/new" %>
+  </div>
+  <div class="col-md-8">
+    <h1>Search Results</h1>
+    <%= render @search.items %>
+  </div>
+</div>
 
-<%= render partial: "searches/new" %>
 
-<h1>Search Results</h1>
-<%= render @search.items %>

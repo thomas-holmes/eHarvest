@@ -1,0 +1,1 @@
+Time::DATE_FORMATS[:long_date_local_time] = '%B %d, %Y at %I:%M%P'

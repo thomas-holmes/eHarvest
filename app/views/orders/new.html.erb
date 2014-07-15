@@ -1,0 +1,34 @@
+<h1> Create a New Order </h1>
+
+<%= form_for(@order) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+    </div>
+  <% end %>
+  <ul>
+        <p>
+          <%= f.label :requested_by %><br />
+          <%= f.text_field :requester %>
+        </p>
+
+        <p>
+          <%= f.label :pick_up_person %><br />
+          <%= f.text_field :recipient %>
+        </p>
+        <p>
+          <%= f.label :scheduled_for %><br />
+          <%= f.datetime_select :delivery_date , {:ampm => true} %>
+        </p>
+
+        <p>
+          <%= f.label :pick_up_location %><br />
+          <%= f.collection_select(:location_id, Location.all, :id, :name) %>
+        </p>
+      </ul>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
