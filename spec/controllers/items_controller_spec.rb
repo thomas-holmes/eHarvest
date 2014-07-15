@@ -22,7 +22,6 @@ describe ItemsController do
       sign_in user
 
       items = 3.times.map { FactoryGirl.create(:item, item_code: item_code) }
-      binding.pry
 
       get :index, format: :json
       expect(response.status).to eq 200
